@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="leagueTestV1">
+<title>League of Legends Test</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div ng-controller="DataCtrl as dataCtrl">
+
+        <h2>League of Legends Test</h2>
+        <form ng-submit="dataCtrl.getSummonerId()">
+            <input ng-model="dataCtrl.summoner.name" type="text" placeholder="Summoner Name" name="summoner-name-input">
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
