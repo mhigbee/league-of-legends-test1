@@ -11,8 +11,9 @@ angular.module('leagueTestV1',[])
             console.log("Submit");
             console.log(vm.summoner)
         };
-        vm.userList = LeagueService.listUsers();
-        console.log(vm.userList);
+        vm.getUsers = function() {
+            return LeagueService.listUsers();
+        }
     }])
     .service('LeagueService', [function () {
         var users = [

@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div ng-controller="DataCtrl as dataCtrl">
+    <div ng-controller="DataCtrl as dataCtrl" class="container">
 
         <h2>League of Legends Test</h2>
         <form ng-submit="dataCtrl.getSummonerId()">
             <input ng-model="dataCtrl.summoner.name" type="text" placeholder="Summoner Name" name="summoner-name-input">
             <input type="submit" value="Submit">
         </form>
+        <div ng-repeat="user in dataCtrl.getUsers()">
+            <span ng-bind="user.userName"></span>
+
+        </div>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
