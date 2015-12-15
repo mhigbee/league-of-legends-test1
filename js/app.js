@@ -1,6 +1,6 @@
 angular.module('leagueTestV1',[])
     //.controller('DataCtrl',['GetDataService',function (GetDataService){
-    .controller('DataCtrl',[function (){
+    .controller('DataCtrl', ['LeagueService',function (LeagueService){
         var vm = this;
         console.log('Hello');
         //var getLeagueData = function () {
@@ -9,11 +9,22 @@ angular.module('leagueTestV1',[])
         //console.log(getLeagueData());
         vm.getSummonerId = function (){
             console.log("Submit");
-            console.log(vm.summoner.name)
-
+            console.log(vm.summoner)
         };
+        vm.userList = LeagueService.listUsers();
+        console.log(vm.userList);
+    }])
+    .service('LeagueService', [function () {
+        var users = [
+            {userName : "jhrigs", userID : 12},
+            {userName : "shigabee", userID: 12345677},
+            {userName : "matt", userID: 18390498}
+            ]
+        this.listUsers = function(){
+            return users;
+        }
     }]);
-//make a service
+//make a service with $http
 //hard code in some array of data in the service
 //test the app
 //next step do an np-repeat and show in the view.
